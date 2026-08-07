@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh Yadav — Portfolio</title>
+  <meta name="description" content="Utkarsh Yadav — Software & Backend Developer Portfolio">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- BOOT SCREEN                               -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="boot-screen">
+    <div class="boot-logo">
+      <svg viewBox="0 0 170 170" width="80" height="80">
+        <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.2-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.28 2.13-9.54 3.25-12.8 3.35-4.93.21-9.84-1.96-14.75-6.52-3.13-2.74-7.04-7.41-11.76-14.04-5.05-7.08-9.2-15.29-12.46-24.65-3.49-10.11-5.24-19.9-5.24-29.39 0-10.87 2.35-20.24 7.04-28.08a41.44 41.44 0 0114.72-14.97 39.63 39.63 0 0119.89-5.64c3.92 0 9.06 1.21 15.43 3.61 6.35 2.41 10.43 3.63 12.22 3.63 1.34 0 5.87-1.43 13.56-4.28 7.26-2.62 13.39-3.7 18.4-3.28 13.6 1.1 23.82 6.46 30.61 16.12-12.16 7.37-18.17 17.69-18.04 30.93.12 10.31 3.85 18.89 11.17 25.7 3.32 3.15 7.03 5.59 11.14 7.32-.89 2.59-1.84 5.07-2.83 7.46zM119.04 7.01c0 8.07-2.95 15.61-8.82 22.58-7.09 8.3-15.66 13.09-24.89 12.33a25.1 25.1 0 01-.19-3.06c0-7.74 3.37-16.03 9.34-22.79 2.98-3.42 6.78-6.27 11.39-8.54 4.59-2.24 8.94-3.47 13.04-3.7.13 1.07.13 2.14.13 3.18z" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="boot-progress">
+      <div class="boot-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- WELCOME SCREEN                            -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="welcome-screen" class="hidden">
+    <canvas id="welcome-particles"></canvas>
+    <div class="welcome-content">
+      <div class="welcome-emoji">👨‍💻</div>
+      <div class="welcome-title">
+        <span class="typewriter" id="welcome-name"></span>
+        <span class="typewriter-cursor">|</span>
+      </div>
+      <div class="welcome-subtitle" id="welcome-role"></div>
+      <div class="welcome-tagline" id="welcome-tagline"></div>
+      <div class="welcome-cta">
+        <button class="welcome-btn" id="welcome-enter-btn">
+          <span>Enter Portfolio</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="welcome-hint">Press Enter or click to continue</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MACBOOK FRAME                             -->
+  <!-- ══════════════════════════════════════════ -->
+  <div id="macbook" class="hidden">
+    <div class="macbook-screen">
+      <div class="notch">
+        <div class="camera-dot"></div>
+      </div>
+
+      <!-- ════════════════════════════════════ -->
+      <!-- macOS DESKTOP                        -->
+      <!-- ════════════════════════════════════ -->
+      <div id="desktop">
+
+        <!-- Animated Particles Canvas -->
+        <canvas id="desktop-particles"></canvas>
+
+        <!-- ── Menu Bar ── -->
+        <div id="menu-bar">
+          <div class="menu-left">
+            <span class="menu-apple" id="apple-menu-btn">
+              <svg viewBox="0 0 170 170" width="14" height="14">
+                <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.2-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.28 2.13-9.54 3.25-12.8 3.35-4.93.21-9.84-1.96-14.75-6.52-3.13-2.74-7.04-7.41-11.76-14.04-5.05-7.08-9.2-15.29-12.46-24.65-3.49-10.11-5.24-19.9-5.24-29.39 0-10.87 2.35-20.24 7.04-28.08a41.44 41.44 0 0114.72-14.97 39.63 39.63 0 0119.89-5.64c3.92 0 9.06 1.21 15.43 3.61 6.35 2.41 10.43 3.63 12.22 3.63 1.34 0 5.87-1.43 13.56-4.28 7.26-2.62 13.39-3.7 18.4-3.28 13.6 1.1 23.82 6.46 30.61 16.12-12.16 7.37-18.17 17.69-18.04 30.93.12 10.31 3.85 18.89 11.17 25.7 3.32 3.15 7.03 5.59 11.14 7.32-.89 2.59-1.84 5.07-2.83 7.46zM119.04 7.01c0 8.07-2.95 15.61-8.82 22.58-7.09 8.3-15.66 13.09-24.89 12.33a25.1 25.1 0 01-.19-3.06c0-7.74 3.37-16.03 9.34-22.79 2.98-3.42 6.78-6.27 11.39-8.54 4.59-2.24 8.94-3.47 13.04-3.7.13 1.07.13 2.14.13 3.18z" fill="currentColor"/>
+              </svg>
+            </span>
+            <span class="menu-app-name" id="menu-app-name">Finder</span>
+            <span class="menu-item has-dropdown" data-menu="file">File
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="openApp('finder')">New Finder Window <span class="menu-shortcut">⌘N</span></div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="closeWindow(activeWindow)">Close Window <span class="menu-shortcut">⌘W</span></div></div>
+            </span>
+            <span class="menu-item has-dropdown" data-menu="edit">Edit
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="document.execCommand('undo')">Undo <span class="menu-shortcut">⌘Z</span></div><div class="menu-dropdown-item" onclick="document.execCommand('redo')">Redo <span class="menu-shortcut">⇧⌘Z</span></div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="document.execCommand('cut')">Cut <span class="menu-shortcut">⌘X</span></div><div class="menu-dropdown-item" onclick="document.execCommand('copy')">Copy <span class="menu-shortcut">⌘C</span></div><div class="menu-dropdown-item" onclick="document.execCommand('paste')">Paste <span class="menu-shortcut">⌘V</span></div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="document.querySelectorAll('input').forEach(i=>i.select())">Select All <span class="menu-shortcut">⌘A</span></div></div>
+            </span>
+            <span class="menu-item has-dropdown" data-menu="view">View
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="changeWallpaper()">Change Wallpaper</div><div class="menu-dropdown-item" onclick="openLaunchpad()">Launchpad</div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="toggleSpotlight(true)">Spotlight Search <span class="menu-shortcut">⌘K</span></div></div>
+            </span>
+            <span class="menu-item has-dropdown" data-menu="go">Go
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="openApp('about')">About Me</div><div class="menu-dropdown-item" onclick="openApp('projects')">Projects</div><div class="menu-dropdown-item" onclick="openApp('skills')">Skills</div><div class="menu-dropdown-item" onclick="openApp('experience')">Experience</div><div class="menu-dropdown-item" onclick="openApp('contact')">Contact</div><div class="menu-dropdown-item" onclick="openApp('resume')">Resume</div></div>
+            </span>
+            <span class="menu-item has-dropdown" data-menu="window">Window
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="minimizeWindow(activeWindow)">Minimize <span class="menu-shortcut">⌘M</span></div><div class="menu-dropdown-item" onclick="maximizeWindow(activeWindow)">Zoom</div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="showAppSwitcher()">Show All Windows</div></div>
+            </span>
+            <span class="menu-item has-dropdown" data-menu="help">Help
+              <div class="menu-dropdown"><div class="menu-dropdown-item" onclick="openApp('ai-chat')">Ask AI Assistant</div><div class="menu-separator-dd"></div><div class="menu-dropdown-item" onclick="openApp('terminal')">Open Terminal</div><div class="menu-dropdown-item" onclick="openApp('finder')">Portfolio Guide</div></div>
+            </span>
+          </div>
+          <div class="menu-right">
+            <span class="menu-icon" id="control-center-btn" title="Control Center">
+              <svg width="16" height="14" viewBox="0 0 24 20"><rect x="1" y="1" width="9" height="8" rx="2" fill="currentColor" opacity="0.8"/><rect x="14" y="1" width="9" height="8" rx="2" fill="currentColor" opacity="0.5"/><rect x="1" y="11" width="9" height="8" rx="2" fill="currentColor" opacity="0.5"/><rect x="14" y="11" width="9" height="8" rx="2" fill="currentColor" opacity="0.8"/></svg>
+            </span>
+            <span class="menu-icon" title="Battery">
+              <svg width="18" height="10" viewBox="0 0 25 12"><rect x="0" y="1" width="21" height="10" rx="2" stroke="currentColor" fill="none" stroke-width="1.2"/><rect x="2" y="3" width="15" height="6" rx="1" fill="currentColor" opacity="0.8"/><rect x="22" y="3.5" width="2" height="5" rx="1" fill="currentColor"/></svg>
+            </span>
+            <span class="menu-icon" title="WiFi">
+              <svg width="16" height="12" viewBox="0 0 24 18"><path d="M1.5 6.5C5.5 2.5 11.5 0.5 17.5 2.5" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/><path d="M5 10c2.5-2.5 6.5-3.5 10-2" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/><path d="M8.5 13.5c1.2-1.2 3-1.7 4.5-1" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/><circle cx="12" cy="16" r="1.2" fill="currentColor"/></svg>
+            </span>
+            <span class="menu-icon" title="Search" id="spotlight-btn">🔍</span>
+            <span class="menu-icon" id="notification-center-btn" title="Notifications">
+              <svg width="14" height="16" viewBox="0 0 20 22"><path d="M10 2C6.5 2 4 5 4 8v5l-2 2v1h16v-1l-2-2V8c0-3-2.5-6-6-6z" fill="currentColor" opacity="0.7"/><circle cx="10" cy="20" r="2" fill="currentColor" opacity="0.9"/></svg>
+            </span>
+            <span class="menu-icon" id="menu-clock"></span>
+          </div>
+        </div>
+
+        <!-- ── Desktop Widgets (bottom-left) ── -->
+        <div id="desktop-widgets">
+          <div class="widget widget-clock">
+            <div class="widget-time" id="widget-time"></div>
+            <div class="widget-date" id="widget-date"></div>
+          </div>
+          <div class="widget widget-stats">
+            <div class="widget-stats-title">Quick Stats</div>
+            <div class="widget-stat-item">
+              <span class="widget-stat-icon">🧠</span>
+              <span class="widget-stat-label">DSA Problems</span>
+              <span class="widget-stat-value">350+</span>
+            </div>
+            <div class="widget-stat-item">
+              <span class="widget-stat-icon">🏆</span>
+              <span class="widget-stat-label">Oracle AI Certified</span>
+              <span class="widget-stat-value">✓</span>
+            </div>
+            <div class="widget-stat-item">
+              <span class="widget-stat-icon">💼</span>
+              <span class="widget-stat-label">Infosys Intern</span>
+              <span class="widget-stat-value">✓</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Desktop Icons ── -->
+        <div id="desktop-icons">
+          <div class="desktop-icon" data-app="about" ondblclick="openApp('about')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5AC8FA"/><circle cx="40" cy="30" r="12" fill="#fff"/><ellipse cx="40" cy="58" rx="18" ry="14" fill="#fff"/></svg></div>
+            <span>About Me</span>
+          </div>
+          <div class="desktop-icon" data-app="projects" ondblclick="openApp('projects')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF9500"/><rect x="18" y="20" width="44" height="8" rx="2" fill="#fff" opacity="0.9"/><rect x="18" y="34" width="44" height="8" rx="2" fill="#fff" opacity="0.7"/><rect x="18" y="48" width="32" height="8" rx="2" fill="#fff" opacity="0.5"/></svg></div>
+            <span>Projects</span>
+          </div>
+          <div class="desktop-icon" data-app="skills" ondblclick="openApp('skills')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#34C759"/><polygon points="40,16 46,32 62,32 49,42 53,58 40,48 27,58 31,42 18,32 34,32" fill="#fff"/></svg></div>
+            <span>Skills</span>
+          </div>
+          <div class="desktop-icon" data-app="experience" ondblclick="openApp('experience')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5856D6"/><rect x="20" y="18" width="40" height="44" rx="4" fill="#fff" opacity="0.9"/><rect x="26" y="26" width="28" height="4" rx="1" fill="#5856D6" opacity="0.6"/><rect x="26" y="34" width="28" height="4" rx="1" fill="#5856D6" opacity="0.4"/><rect x="26" y="42" width="20" height="4" rx="1" fill="#5856D6" opacity="0.3"/></svg></div>
+            <span>Experience</span>
+          </div>
+          <div class="desktop-icon" data-app="contact" ondblclick="openApp('contact')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF3B30"/><rect x="16" y="24" width="48" height="32" rx="4" fill="#fff" opacity="0.9"/><polyline points="16,24 40,44 64,24" fill="none" stroke="#FF3B30" stroke-width="2.5" opacity="0.6"/></svg></div>
+            <span>Contact</span>
+          </div>
+          <div class="desktop-icon" data-app="resume" ondblclick="openApp('resume')">
+            <div class="icon-img"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#AF52DE"/><rect x="22" y="14" width="36" height="52" rx="3" fill="#fff" opacity="0.9"/><rect x="28" y="22" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.6"/><rect x="28" y="29" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.4"/><rect x="28" y="36" width="18" height="3" rx="1" fill="#AF52DE" opacity="0.3"/><rect x="28" y="44" width="24" height="2" rx="1" fill="#AF52DE" opacity="0.5"/><rect x="28" y="49" width="24" height="2" rx="1" fill="#AF52DE" opacity="0.3"/><rect x="28" y="54" width="16" height="2" rx="1" fill="#AF52DE" opacity="0.2"/></svg></div>
+            <span>Resume</span>
+          </div>
+        </div>
+
+        <!-- ── Windows Container ── -->
+        <div id="windows-container"></div>
+
+        <!-- ── Spotlight Search ── -->
+        <div id="spotlight-overlay" class="hidden">
+          <div id="spotlight">
+            <input type="text" id="spotlight-input" placeholder="Spotlight Search..." autocomplete="off">
+            <div id="spotlight-results"></div>
+          </div>
+        </div>
+
+        <!-- ── Right-Click Context Menu ── -->
+        <div id="context-menu" class="hidden">
+          <div class="context-item" onclick="changeWallpaper()">
+            <span class="context-icon">🖼️</span> Change Wallpaper
+          </div>
+          <div class="context-separator"></div>
+          <div class="context-item" onclick="openApp('about')">
+            <span class="context-icon">👤</span> About Utkarsh
+          </div>
+          <div class="context-item" onclick="openApp('skills')">
+            <span class="context-icon">⭐</span> Skills
+          </div>
+          <div class="context-item" onclick="openApp('projects')">
+            <span class="context-icon">📁</span> Projects
+          </div>
+          <div class="context-separator"></div>
+          <div class="context-item" onclick="openLaunchpad()">
+            <span class="context-icon">🚀</span> Launchpad
+          </div>
+          <div class="context-item" onclick="openApp('terminal')">
+            <span class="context-icon">💻</span> Terminal
+          </div>
+          <div class="context-separator"></div>
+          <div class="context-item" onclick="openApp('contact')">
+            <span class="context-icon">📧</span> Contact Me
+          </div>
+        </div>
+
+        <!-- ── Notification Center ── -->
+        <div id="notification-center" class="hidden">
+          <div class="notif-header">
+            <span>Notifications</span>
+            <span class="notif-clear" onclick="clearNotifications()">Clear All</span>
+          </div>
+          <div class="notif-list">
+            <div class="notif-item">
+              <div class="notif-icon">🏆</div>
+              <div class="notif-content">
+                <div class="notif-title">Oracle AI Certified</div>
+                <div class="notif-text">OCI 2025 Generative AI Professional</div>
+                <div class="notif-time">Recently</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon">🧠</div>
+              <div class="notif-content">
+                <div class="notif-title">350+ DSA Problems</div>
+                <div class="notif-text">LeetCode, CodeChef, GFG</div>
+                <div class="notif-time">Ongoing</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon">💼</div>
+              <div class="notif-content">
+                <div class="notif-title">Infosys Internship</div>
+                <div class="notif-text">Java Full Stack Developer</div>
+                <div class="notif-time">Nov 2024 – Jan 2025</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon">🚀</div>
+              <div class="notif-content">
+                <div class="notif-title">2 Major Projects</div>
+                <div class="notif-text">Carbon Footprint + Offline UPI</div>
+                <div class="notif-time">Completed</div>
+              </div>
+            </div>
+          </div>
+          <div class="notif-widgets-section">
+            <div class="notif-widget-mini">
+              <span>☀️</span>
+              <span>Greater Noida</span>
+            </div>
+            <div class="notif-widget-mini">
+              <span>🧑‍💻</span>
+              <span>B.Tech CSE '27</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Control Center ── -->
+        <div id="control-center" class="hidden">
+          <div class="cc-grid">
+            <div class="cc-tile cc-active" id="cc-wifi" onclick="toggleCC(this)">
+              <span class="cc-tile-icon">📶</span>
+              <span class="cc-tile-label">WiFi</span>
+            </div>
+            <div class="cc-tile cc-active" id="cc-bluetooth" onclick="toggleCC(this)">
+              <span class="cc-tile-icon">🔵</span>
+              <span class="cc-tile-label">Bluetooth</span>
+            </div>
+            <div class="cc-tile cc-active" id="cc-airdrop" onclick="toggleCC(this)">
+              <span class="cc-tile-icon">📡</span>
+              <span class="cc-tile-label">AirDrop</span>
+            </div>
+            <div class="cc-tile" id="cc-dnd" onclick="toggleCC(this)">
+              <span class="cc-tile-icon">🌙</span>
+              <span class="cc-tile-label">DND</span>
+            </div>
+          </div>
+          <div class="cc-slider-section">
+            <div class="cc-slider-row">
+              <span>🔆</span>
+              <div class="cc-slider-track"><div class="cc-slider-fill" style="width:75%"></div></div>
+            </div>
+            <div class="cc-slider-row">
+              <span>🔊</span>
+              <div class="cc-slider-track"><div class="cc-slider-fill" style="width:50%"></div></div>
+            </div>
+          </div>
+          <div class="cc-bottom">
+            <div class="cc-tile" onclick="changeWallpaper()">
+              <span class="cc-tile-icon">🖼️</span>
+              <span class="cc-tile-label">Wallpaper</span>
+            </div>
+            <div class="cc-tile" onclick="openLaunchpad()">
+              <span class="cc-tile-icon">🚀</span>
+              <span class="cc-tile-label">Launchpad</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Launchpad ── -->
+        <div id="launchpad" class="hidden">
+          <div class="launchpad-search">
+            <input type="text" id="launchpad-search-input" placeholder="Search apps..." autocomplete="off">
+          </div>
+          <div class="launchpad-grid" id="launchpad-grid">
+            <div class="launchpad-item" data-app="about" onclick="openApp('about');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5AC8FA"/><circle cx="40" cy="30" r="12" fill="#fff"/><ellipse cx="40" cy="58" rx="18" ry="14" fill="#fff"/></svg></div>
+              <span>About Me</span>
+            </div>
+            <div class="launchpad-item" data-app="projects" onclick="openApp('projects');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF9500"/><rect x="18" y="20" width="44" height="8" rx="2" fill="#fff" opacity="0.9"/><rect x="18" y="34" width="44" height="8" rx="2" fill="#fff" opacity="0.7"/><rect x="18" y="48" width="32" height="8" rx="2" fill="#fff" opacity="0.5"/></svg></div>
+              <span>Projects</span>
+            </div>
+            <div class="launchpad-item" data-app="skills" onclick="openApp('skills');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#34C759"/><polygon points="40,16 46,32 62,32 49,42 53,58 40,48 27,58 31,42 18,32 34,32" fill="#fff"/></svg></div>
+              <span>Skills</span>
+            </div>
+            <div class="launchpad-item" data-app="experience" onclick="openApp('experience');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5856D6"/><rect x="20" y="18" width="40" height="44" rx="4" fill="#fff" opacity="0.9"/><rect x="26" y="26" width="28" height="4" rx="1" fill="#5856D6" opacity="0.6"/><rect x="26" y="34" width="28" height="4" rx="1" fill="#5856D6" opacity="0.4"/><rect x="26" y="42" width="20" height="4" rx="1" fill="#5856D6" opacity="0.3"/></svg></div>
+              <span>Experience</span>
+            </div>
+            <div class="launchpad-item" data-app="contact" onclick="openApp('contact');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF3B30"/><rect x="16" y="24" width="48" height="32" rx="4" fill="#fff" opacity="0.9"/><polyline points="16,24 40,44 64,24" fill="none" stroke="#FF3B30" stroke-width="2.5" opacity="0.6"/></svg></div>
+              <span>Contact</span>
+            </div>
+            <div class="launchpad-item" data-app="resume" onclick="openApp('resume');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#AF52DE"/><rect x="22" y="14" width="36" height="52" rx="3" fill="#fff" opacity="0.9"/><rect x="28" y="22" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.6"/><rect x="28" y="29" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.4"/></svg></div>
+              <span>Resume</span>
+            </div>
+            <div class="launchpad-item" data-app="terminal" onclick="openApp('terminal');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#1C1C1E"/><polyline points="22,30 34,40 22,50" fill="none" stroke="#34C759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="38" y1="50" x2="56" y2="50" stroke="#34C759" stroke-width="3" stroke-linecap="round"/></svg></div>
+              <span>Terminal</span>
+            </div>
+            <div class="launchpad-item" data-app="ai-chat" onclick="openApp('ai-chat');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="url(#ai-grad2)"/><defs><linearGradient id="ai-grad2" x1="0" y1="0" x2="80" y2="80"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#3B82F6"/></linearGradient></defs><circle cx="32" cy="34" r="4" fill="#fff"/><circle cx="48" cy="34" r="4" fill="#fff"/><path d="M28 46 Q40 54 52 46" stroke="#fff" fill="none" stroke-width="2.5" stroke-linecap="round"/><polygon points="60,16 63,24 72,24 65,29 67,37 60,32 53,37 55,29 48,24 57,24" fill="#FBBF24" opacity="0.9"/></svg></div>
+              <span>AI Chat</span>
+            </div>
+            <div class="launchpad-item" data-app="finder" onclick="openApp('finder');closeLaunchpad();">
+              <div class="launchpad-icon"><svg viewBox="0 0 80 80" width="56" height="56"><rect x="4" y="4" width="72" height="72" rx="16" fill="#4A90D9"/><ellipse cx="40" cy="40" rx="22" ry="20" fill="#fff" opacity="0.9"/><circle cx="33" cy="35" r="3" fill="#333"/><circle cx="47" cy="35" r="3" fill="#333"/><path d="M30 48 Q40 56 50 48" stroke="#333" fill="none" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <span>Finder</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── App Switcher (Cmd+Tab) ── -->
+        <div id="app-switcher" class="hidden">
+          <div class="switcher-row" id="switcher-row"></div>
+        </div>
+
+        <!-- ── Dock ── -->
+        <div id="dock">
+          <div class="dock-item" data-app="finder" onclick="openApp('finder')" title="Finder">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#4A90D9"/><ellipse cx="40" cy="40" rx="22" ry="20" fill="#fff" opacity="0.9"/><circle cx="33" cy="35" r="3" fill="#333"/><circle cx="47" cy="35" r="3" fill="#333"/><path d="M30 48 Q40 56 50 48" stroke="#333" fill="none" stroke-width="2" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="dock-separator"></div>
+          <div class="dock-item" data-app="about" onclick="openApp('about')" title="About Me">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5AC8FA"/><circle cx="40" cy="30" r="12" fill="#fff"/><ellipse cx="40" cy="58" rx="18" ry="14" fill="#fff"/></svg></div>
+          </div>
+          <div class="dock-item" data-app="projects" onclick="openApp('projects')" title="Projects">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF9500"/><rect x="18" y="20" width="44" height="8" rx="2" fill="#fff" opacity="0.9"/><rect x="18" y="34" width="44" height="8" rx="2" fill="#fff" opacity="0.7"/><rect x="18" y="48" width="32" height="8" rx="2" fill="#fff" opacity="0.5"/></svg></div>
+          </div>
+          <div class="dock-item" data-app="skills" onclick="openApp('skills')" title="Skills">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#34C759"/><polygon points="40,16 46,32 62,32 49,42 53,58 40,48 27,58 31,42 18,32 34,32" fill="#fff"/></svg></div>
+          </div>
+          <div class="dock-item" data-app="experience" onclick="openApp('experience')" title="Experience">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#5856D6"/><rect x="20" y="18" width="40" height="44" rx="4" fill="#fff" opacity="0.9"/><rect x="26" y="26" width="28" height="4" rx="1" fill="#5856D6" opacity="0.6"/><rect x="26" y="34" width="28" height="4" rx="1" fill="#5856D6" opacity="0.4"/><rect x="26" y="42" width="20" height="4" rx="1" fill="#5856D6" opacity="0.3"/></svg></div>
+          </div>
+          <div class="dock-item" data-app="contact" onclick="openApp('contact')" title="Contact">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#FF3B30"/><rect x="16" y="24" width="48" height="32" rx="4" fill="#fff" opacity="0.9"/><polyline points="16,24 40,44 64,24" fill="none" stroke="#FF3B30" stroke-width="2.5" opacity="0.6"/></svg></div>
+          </div>
+          <div class="dock-separator"></div>
+          <div class="dock-item" data-app="terminal" onclick="openApp('terminal')" title="Terminal">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#1C1C1E"/><polyline points="22,30 34,40 22,50" fill="none" stroke="#34C759" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="38" y1="50" x2="56" y2="50" stroke="#34C759" stroke-width="3" stroke-linecap="round"/></svg></div>
+          </div>
+          <div class="dock-item" data-app="resume" onclick="openApp('resume')" title="Resume">
+            <div class="dock-icon"><svg viewBox="0 0 80 80" width="48" height="48"><rect x="4" y="4" width="72" height="72" rx="16" fill="#AF52DE"/><rect x="22" y="14" width="36" height="52" rx="3" fill="#fff" opacity="0.9"/><rect x="28" y="22" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.6"/><rect x="28" y="29" width="24" height="3" rx="1" fill="#AF52DE" opacity="0.4"/><rect x="28" y="36" width="18" height="3" rx="1" fill="#AF52DE" opacity="0.3"/></svg></div>
+          </div>
+        </div>
+
+        <!-- ── AI Search Bar (center-top, draggable) ── -->
+        <div id="ai-search-bar" class="draggable-ai">
+          <div class="ai-search-handle" title="Drag to move">
+            <svg width="12" height="12" viewBox="0 0 12 12"><circle cx="3" cy="3" r="1.5" fill="rgba(255,255,255,0.3)"/><circle cx="9" cy="3" r="1.5" fill="rgba(255,255,255,0.3)"/><circle cx="3" cy="9" r="1.5" fill="rgba(255,255,255,0.3)"/><circle cx="9" cy="9" r="1.5" fill="rgba(255,255,255,0.3)"/></svg>
+          </div>
+          <div class="ai-search-inner" onclick="toggleAIPanel()">
+            <span class="ai-search-emoji">🤖</span>
+            <span class="ai-search-text">Ask Mac anything about Utkarsh...</span>
+            <span class="ai-search-shortcut">⌘K</span>
+          </div>
+        </div>
+
+        <!-- ── AI Chat Panel (draggable with bar) ── -->
+        <div id="ai-panel" class="hidden draggable-ai-panel">
+          <div class="ai-panel-drag-handle" title="Drag to move">
+            <div class="ai-panel-header">
+              <div class="ai-panel-title">
+                <span class="ai-panel-icon">🤖</span>
+                <span>Mac — AI Assistant</span>
+              </div>
+              <button class="ai-panel-close" onclick="toggleAIPanel()">✕</button>
+            </div>
+          </div>
+          <div class="ai-panel-messages" id="ai-panel-messages">
+            <div class="chat-bubble system">👋 Hey! I'm Mac, Utkarsh's portfolio AI assistant. Ask me anything about Utkarsh!</div>
+          </div>
+          <div class="ai-panel-input-area">
+            <input type="text" class="ai-panel-input" id="ai-panel-input" placeholder="Ask about Utkarsh..." autocomplete="off">
+            <button class="ai-panel-send" id="ai-panel-send" onclick="sendAIPanelMessage()">➤</button>
+          </div>
+        </div>
+
+        <!-- ── Wallpaper SVG Pattern ── -->
+        <svg id="wallpaper-pattern" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+            </pattern>
+            <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.06)"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)"/>
+          <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+
+      </div><!-- end #desktop -->
+    </div><!-- end .macbook-screen -->
+
+    <div class="macbook-base">
+      <div class="macbook-notch-bottom"></div>
+    </div>
+  </div><!-- end #macbook -->
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- SCRIPTS                                   -->
+  <!-- ══════════════════════════════════════════ -->
+  <script src="data/profile.js"></script>
+  <script src="js/boot.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/ai-chat.js"></script>
+
+</body>
+</html>
