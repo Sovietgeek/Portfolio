@@ -1,4 +1,4 @@
-# 🖥️ Utkarsh Yadav — MacBook Portfolio
+# 🖥️ Utkarsh Yadav — My Portfolio
 
 A fully interactive **macOS desktop simulation** portfolio website. When you open a MacBook, that's exactly what this looks like — complete with boot animation, draggable windows, dock bar, terminal, AI chatbot, and more.
 
